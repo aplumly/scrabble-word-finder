@@ -4,6 +4,7 @@ let highnumber=0;
 //create on click event and store search word
 $("#submitletters").on("click",function(event){
     event.preventDefault();
+    highnumber=0;
     let letters = $("#letters").val();
     letters=letters.toLowerCase();
     console.log(letters);

@@ -1,6 +1,6 @@
 
 console.log(words[200000]);
-
+let highnumber=0;
 //create on click event and store search word
 $("#submitletters").on("click",function(event){
     event.preventDefault();
@@ -118,7 +118,10 @@ function imposters(letters)
 function sort(scrabble)
 {   let num = new Array();
     for(let a=0;a<scrabble.length;a++)
-    {   
+    {   if(scrabble[a].length>highnumber)
+        {
+        highnumber=scrabble[a].length;
+        }
         num.push(scrabble[a].length);
     }
     return num;
@@ -126,7 +129,7 @@ function sort(scrabble)
 
 function draw(scrabble,numbers)
 {   $("#wordbox").empty();
-    for(let i=1;i<=99;i++)
+    for(let i=1;i<=highnumber;i++)
     {   
         $("#wordbox").append('<h3>words with '+i+' letters</h3><br><div id="num'+i+'"></div><hr>');
     }
